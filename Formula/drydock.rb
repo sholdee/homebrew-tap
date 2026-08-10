@@ -1,7 +1,7 @@
 class Drydock < Formula
   desc "Inspect your Argo CD fleet without getting wet"
   homepage "https://github.com/sholdee/drydock"
-  version "0.2.8"
+  version "0.2.9"
   license "Apache-2.0"
 
   host_cpu = RbConfig::CONFIG.fetch("host_cpu")
@@ -9,16 +9,16 @@ class Drydock < Formula
 
   if host_os.include?("linux") && ["aarch64", "arm64"].include?(host_cpu)
     url "https://github.com/sholdee/drydock/releases/download/v#{version}/drydock_linux-arm64.tar.gz"
-    sha256 "b4c2ceb591fd626fb2d5a72ee735f9baf8e3c032566bb87d592b188987c8f809"
+    sha256 "b9c4494e6019fb2f5a76535a1bd94773b6607b5a7e673e4596ce49aa6f58edb2"
   elsif host_os.include?("linux") && ["amd64", "x86_64"].include?(host_cpu)
     url "https://github.com/sholdee/drydock/releases/download/v#{version}/drydock_linux-amd64.tar.gz"
-    sha256 "7234edff0aa28a565f83d8819cd7a2fdff687c1e536701c6c9468b82aa4531cd"
+    sha256 "d350234019597adf4daa9a4a010125902be0d2e01b0dfb8eaef53c1353ea1d57"
   elsif ["aarch64", "arm64"].include?(host_cpu)
     url "https://github.com/sholdee/drydock/releases/download/v#{version}/drydock_darwin-arm64.tar.gz"
-    sha256 "961769d4af345972ac6ab4cf7f806d25bb854e36137c4d7900a917bf59e5f2cc"
+    sha256 "b04725de3612e7e44b4f5decc4421e84dd16af0dbbd68e547a58d61a7d21446e"
   elsif ["amd64", "x86_64"].include?(host_cpu)
     url "https://github.com/sholdee/drydock/releases/download/v#{version}/drydock_darwin-amd64.tar.gz"
-    sha256 "b7aad8ec3b8ad8e65fcdc020d0460fada5526c3be364a197b9c2525d2dc293a4"
+    sha256 "3679074baa0055fbe83a0c76c024c9b93be56b4ca72ae44d39fb38c62e8ea52a"
   else
     odie "drydock supports macOS and Linux on amd64 or arm64"
   end
